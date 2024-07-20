@@ -28,9 +28,6 @@
             display: flex;
             flex-direction: column;
         }
-        .filter-container > * {
-            margin-bottom: 12px;
-        }
     </style>
 </head>
 <body>
@@ -75,20 +72,20 @@
 
 <script>
 function filterTable() {
-    var input, filter, table, tr, td, i, j, txtValue, column;
+    var input, filter, table, tr, td, i, txtValue, column;
     input = document.getElementById("myInput");
     filter = input.value.toLowerCase();
     table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
     column = document.getElementById("columnSelect").value;
-
+    
     for (i = 1; i < tr.length; i++) {
         tr[i].style.display = "none";  // Initially hide all rows
         td = tr[i].getElementsByTagName("td")[column];
         if (td) {
             txtValue = td.textContent || td.innerText;
             if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";  // Show the row if it matches the filter
+                tr[i].style.display = "";
             }
         }
     }

@@ -72,7 +72,7 @@
 
 <script>
 function filterTable() {
-    var input, filter, table, tr, td, i, column, txtValue;
+    var input, filter, table, tr, td, i, txtValue, column;
     input = document.getElementById("myInput");
     filter = input.value.toLowerCase();
     table = document.getElementById("myTable");
@@ -86,7 +86,7 @@ function filterTable() {
             if (txtValue.toLowerCase().indexOf(filter) > -1) {
                 tr[i].style.display = "";
             }
-        }
+        }       
     }
 }
 </script>

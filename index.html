@@ -17,7 +17,7 @@
         th {
             background-color: #f2f2f2;
         }
-        #myInput, #columnSelect {
+        #myInput {
             font-size: 16px;
             padding: 12px;
             margin-bottom: 12px;
@@ -28,17 +28,20 @@
             display: flex;
             flex-direction: column;
         }
+        .filter-options {
+            margin-bottom: 12px;
+        }
     </style>
 </head>
 <body>
 
 <h2>Filterable Table</h2>
 <div class="filter-container">
-    <select id="columnSelect" onchange="filterTable()">
-        <option value="0">Name</option>
-        <option value="1">Age</option>
-        <option value="2">Occupation</option>
-    </select>
+    <div class="filter-options">
+        <label><input type="radio" name="column" value="0" onclick="filterTable()"> Name</label>
+        <label><input type="radio" name="column" value="1" onclick="filterTable()"> Age</label>
+        <label><input type="radio" name="column" value="2" onclick="filterTable()"> Occupation</label>
+    </div>
     <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Search for...">
 </div>
 
@@ -77,8 +80,8 @@ function filterTable() {
     filter = input.value.toLowerCase();
     table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
-    column = document.getElementById("columnSelect").value;
-    
+    column = document.querySelector('input[name="column"]:checked').value;
+
     for (i = 1; i < tr.length; i++) {
         tr[i].style.display = "none";  // Initially hide all rows
         td = tr[i].getElementsByTagName("td")[column];

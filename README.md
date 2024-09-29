@@ -16,3 +16,33 @@
 | Judy    | 32  | Lawyer     |
 
 </div>
+
+
+
+```json
+   // Code for coloring. Code for coloring. 
+```
+```html
+   // Code for coloring . Code for coloring. 
+```
+```js
+   // Code for coloring .Code for coloring. 
+```
+```css
+   // Code for coloring .Code for coloring. 
+```
+
+
+
+1. First item
+1. Second item
+1. Third item
+1. Fourth item
+
+
+- First item
+- Second item
+- Third item
+    - Indented item
+    - Indented item
+- Fourth item
